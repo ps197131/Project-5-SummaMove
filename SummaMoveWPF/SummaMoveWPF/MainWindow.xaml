@@ -1,0 +1,17 @@
+﻿<Window x:Class="SummaMoveWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SummaMoveWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView  Margin="493,84,10,10" ItemsSource="{Binding Admin}" DisplayMemberPath="Name"/>
+        <ListView x:Name="lstOefeningen" Margin="10,84,493,10" DisplayMemberPath="Naam_NL"/>
+        <Label Content="Users" HorizontalAlignment="Left" Margin="549,10,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Bahnschrift SemiBold SemiCondensed"/>
+        <Label Content="Oefeningen" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Bahnschrift SemiBold SemiCondensed"/>
+                                                 
+
+    </Grid>
+</Window>
