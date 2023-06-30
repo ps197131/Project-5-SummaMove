@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('prestaties', function (Blueprint $table) {
             $table->id();
             $table->integer('aantal');
-            $table->time('van');
-            $table->time('tot');
-            $table->date('datum');   
-            $table->foreignId('user_id')->constrained();  
-            $table->foreignId('oefeningen_id')->constrained();        
+            $table->time('van')->nullable();
+            $table->time('tot')->nullable();
+            $table->date('datum');
+            $table->foreignId('user_id');
+            $table->foreignId('oefeningen_id');
             $table->timestamps();
         });
     }

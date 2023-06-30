@@ -15,11 +15,11 @@ class Prestatie extends Model
 
     public function Oefeningen()
     {
-        return $this->BelongsTo(Oefeningen::class);
+        return $this->belongsTo(Oefeningen::class);
     }
 
     public function User()
     {
-        return $this->BelongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

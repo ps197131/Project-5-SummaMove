@@ -10,7 +10,7 @@ class Oefeningen extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['naam_NL','naam_EN','omschrijving_NL','omschrijving_EN'];
+    protected $fillable = ['naam_NL', 'naam_EN', 'omschrijving_NL', 'omschrijving_EN'];
 
 
     public function prestaties()
