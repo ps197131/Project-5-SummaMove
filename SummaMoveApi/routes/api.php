@@ -18,8 +18,10 @@ use App\Http\Controllers\AuthenticationController;
 */
 
 Route::get('Guest', [GuestOefeningenControl::class, 'index']);
-Route::post('/register', [AuthenticationController::class, 'register']);
-Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('auth/register', [AuthenticationController::class, 'register']);
+Route::post('auth/login', [AuthenticationController::class, 'login']);
+
+
 
 // Route::group(['middleware' => ['auth:sanctum']], function () {
     //protected routes
@@ -28,3 +30,10 @@ Route::post('/login', [AuthenticationController::class, 'login']);
     Route::post('/logout', [AuthenticationController::class, 'logout']);
 // });
 
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('ping', function (Request $request) {
+        return response()->json([
+            'message' => 'pong',
+        ]);
+    });
+});

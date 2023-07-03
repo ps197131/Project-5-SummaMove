@@ -19,6 +19,29 @@
         form {
             margin-bottom: 10px;
         }
+
+        .gaysex {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            padding: 5px;
+            border: #212121 1px solid;
+            border-radius: 5px;
+            background-color: #b0b0b0;
+        }
+
+        .loginContainer {
+            margin-right: auto;
+            padding: 20px 30px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        input {
+            margin-bottom: 8px;
+        }
     </style>
 
     <script>/*! jQuery v3.7.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
@@ -27,7 +50,38 @@
 </head>
 
 <body>
-    <div>
-
+    <div class="gaysex">
+        <div class="loginContainer">
+            <h2>Login</h2>
+                <label for="Email">Email:</label>
+                <input type="text" name="email" id="email" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <br>
+                <br>
+                <input onmouseup="requestLogin()" type="submit" value="Login">
+        </div>
     </div>
+
+    <script>
+        function requestLogin() {
+            const body = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            }
+            console.log('sex')
+            $.ajax({
+                method: "POST",
+                url: 'api/login',
+                contentType: "application/json",
+                data: JSON.stringify(body),
+                dataType: 'json',
+                success: function(result){
+                    let response = result;
+                    console.log(response);
+                }
+            })
+        }
+    </script>
 </body>
